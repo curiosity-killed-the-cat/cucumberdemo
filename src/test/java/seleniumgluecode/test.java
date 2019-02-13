@@ -78,7 +78,6 @@ public class test {
 		driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox6")).sendKeys("4111111111111111");
 		driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox1")).sendKeys("01/19");
 		driver.findElement(By.id("ctl00_MainContent_fmwOrder_cardList_1")).click();
-		
 	}
 	
 	@When("^the user clicks process$")
@@ -127,17 +126,32 @@ public class test {
 		driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox5")).clear();
 		driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox5")).sendKeys("3210");
 		driver.findElement(By.id("ctl00_MainContent_fmwOrder_UpdateButton")).click();
-		}
+	}
 	
 	@Then("^the order is updated$")
 	public void the_order_is_updated() throws Throwable {
-	    // Check the list all orders page is shown
-		
+		Thread.sleep(2000);
+		String PageText = driver.findElement(By.cssSelector("#ctl00_MainContent_orderGrid > tbody > tr:nth-child(2) > td:nth-child(9)")).getText();
+		Assert.assertThat(PageText, CoreMatchers.containsString("3210"));	
 	}
-	
-	
-	
+
+	@When("^the user deletes the order$")
+	public void the_user_deletes_the_order() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
 
 	
+	@When("^the user deletes the order using the form$")
+	public void the_user_deletes_the_order_using_the_form() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+	
+	@Then("^the order is removed from the system$")
+	public void the_order_is_removed_from_the_system() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
 
 }
