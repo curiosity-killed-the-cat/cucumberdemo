@@ -1,6 +1,6 @@
 # cucumberdemo
 
-##Introduction
+## Introduction
 
 This Selenium & Cucumber BDD (Behaviour Driven Development) framework will interact with: http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/
 
@@ -13,9 +13,9 @@ The following features have been created:
 
 These can be found in the `.feature` files.
 
-##Prerequisites
-- (Cucumber)[https://cucumber.io]
-- (Selenium)[https://www.seleniumhq.org]
+## Prerequisites
+- [Cucumber](https://cucumber.io)
+- [Selenium)](ttps://www.seleniumhq.org)
+- [Eclipse IDE](https://www.eclipse.org)
 - Modifications will need to be made if this software is run on a system that doesn't have Safari
-- See pom.xml
-
+- Dependencies referenced in the pom.xml file.
