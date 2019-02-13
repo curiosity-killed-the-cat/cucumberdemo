@@ -1,6 +1,5 @@
 Feature: User deletes an order
-	Verify an order can update an order
-		
+	Verify a user can delete an order
 		
 Scenario: User deletes their order
 		Given the user has placed an order
