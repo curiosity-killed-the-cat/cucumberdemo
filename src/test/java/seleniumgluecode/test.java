@@ -10,6 +10,8 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 
 public class test {
@@ -82,25 +84,19 @@ public class test {
 		driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox1")).sendKeys("01/19");
 		driver.findElement(By.id("ctl00_MainContent_fmwOrder_cardList_1")).click();
 		
-		
 	}
 	
 	@When("^the user clicks process$")
 	public void the_user_clicks_process() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		driver.findElement(By.id("ctl00_MainContent_fmwOrder_InsertButton")).click();
 	}
 	
 	@Then("^the order will be added to the system$")
 	public void the_order_will_be_added_to_the_system() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		Thread.sleep(2000);
+		driver.findElement(By.id("ctl00_MainContent_fmwOrder_InsertButton")).getText();
+		String PageText = driver.findElement(By.tagName("tbody")).getText();
+		//System.out.println("Page text is: " + PageText);
+		Assert.assertThat(PageText, CoreMatchers.containsString("New order has been successfully added."));	  
 	}
-	
-	
-	
-	
-	
-	
-
 }
