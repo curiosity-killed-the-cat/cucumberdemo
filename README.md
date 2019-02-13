@@ -15,7 +15,7 @@ These can be found in the `.feature` files.
 
 ## Prerequisites
 - [Cucumber](https://cucumber.io)
-- [Selenium)](ttps://www.seleniumhq.org)
+- [Selenium](ttps://www.seleniumhq.org)
 - [Eclipse IDE](https://www.eclipse.org)
 - Java
 - Modifications will need to be made if this software is run on a system that doesn't have Safari
