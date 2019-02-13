@@ -74,7 +74,7 @@ public class test {
 	    // Write code here that turns the phrase above into concrete actions
 	    
 		System.out.println("CKTC Debug: Clicking logout...");
-		driver.findElement(By.id("ctl00_MainContent_btnCheckAll")).click();   
+		driver.findElement(By.id("ctl00_logout")).click();   
         System.out.println("CKTC Debug: Logout clicked....");
 		
 		//throw new PendingException();
@@ -83,9 +83,9 @@ public class test {
 	@Then("^the login screen is shown$")
 	public void the_login_screen_is_shown() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		
+		Thread.sleep(3000);
 		String PageTitle = driver.getTitle();
-        Assert.assertEquals("XXXXXX", PageTitle);
+        Assert.assertEquals("Web Orders Login", PageTitle);
         
 	   // throw new PendingException();
 	}
