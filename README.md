@@ -18,4 +18,4 @@ These can be found in the `.feature` files.
 - [Selenium)](ttps://www.seleniumhq.org)
 - [Eclipse IDE](https://www.eclipse.org)
 - Modifications will need to be made if this software is run on a system that doesn't have Safari
-- Dependencies referenced in the pom.xml file.
+- Dependencies referenced in the `pom.xml` file.
