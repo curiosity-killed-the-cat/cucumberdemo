@@ -15,79 +15,60 @@ import org.junit.Assert;
 public class test {
     
 	WebDriver driver = new SafariDriver();
-	//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	@Given("^the user is on the login screen$")
 	public void the_user_is_on_the_login_screen() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions	
-		//WebDriver driver = new SafariDriver();
+		System.out.println("DEBUG POINT 000000");
+		
 		driver.manage().window().maximize(); 
 		driver.get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/");
 		String PageTitle = driver.getTitle();
-        Assert.assertEquals("Web Orders Login", PageTitle);
-        String CurrentURL = driver.getCurrentUrl();        
-	    //throw new PendingException();
+        Assert.assertEquals("Web Orders Login", PageTitle);       
 	}
     
 	@When("^the user enters their username and password$")
 	public void the_user_enters_their_username_and_password() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
     	driver.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
         driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("test");
-		//throw new PendingException();
 	}
 	
 	@When("^clicks the login button$")
 	public void clicks_the_login_button() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("CKTC Debug: 6");
 		driver.findElement(By.id("ctl00_MainContent_login_button")).click();   
-        System.out.println("CKTC Debug: 66");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		String PageTitle = driver.getTitle();
         Assert.assertNotEquals("Web Orders Login", PageTitle);
-		//throw new PendingException();
 	}
 	
 	@Then("^the user is logged in$")
 	public void the_user_is_logged_in() throws Throwable {
-		System.out.println("CKTC Debug: 7");
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		Thread.sleep(2000);
+		String PageTitle = driver.getTitle();
+		System.out.println("DEBUG POINT 11111111");
+        Assert.assertEquals("Web Orders", PageTitle);   
 	}
 	
-	@Given("^Given the user is logged in$")
-	public void given_the_user_is_logged_in() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("CKTC Debug: 777777");
+	@Given("^the user has logged in$")
+	public void the_user_has_logged_in() throws Throwable {
+		System.out.println("DEBUG POINT A");
 		the_user_is_on_the_login_screen();
-		System.out.println("CKTC Debug: 777778");
+		System.out.println("DEBUG POINT B");
 		the_user_enters_their_username_and_password();
-		System.out.println("CKTC Debug: 777779");
+		System.out.println("DEBUG POINT C");
 		clicks_the_login_button();
-		System.out.println("CKTC Debug: 777780");
-		
-	    //throw new PendingException();
 	}
+
 	
 	@When("^the user clicks logout$")
 	public void the_user_clicks_logout() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    
-		System.out.println("CKTC Debug: Clicking logout...");
-		driver.findElement(By.id("ctl00_logout")).click();   
-        System.out.println("CKTC Debug: Logout clicked....");
-		
-		//throw new PendingException();
+		System.out.println("DEBUG: User clicks logout!");
+		driver.findElement(By.id("ctl00_logout")).click();
+		System.out.println("DEBUG: click complete...!");
 	}
 	
 	@Then("^the login screen is shown$")
 	public void the_login_screen_is_shown() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		String PageTitle = driver.getTitle();
         Assert.assertEquals("Web Orders Login", PageTitle);
-        
-	   // throw new PendingException();
-	}
-	
+	}	
 }
